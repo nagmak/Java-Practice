@@ -1,62 +1,30 @@
 import java.util.Scanner;
 
-public class Adventure2
-{
-	public static void main( String[] args )
-	{
+public class Adventure2{
+	private static int nextroom = 1;
+	public static void main( String[] args ){
 		Scanner keyboard = new Scanner(System.in);
 		
-		int nextroom = 1;
+		// int nextroom = 1;
 		String choice = "", yesno;
 
-		while ( nextroom != 0 )
-		{
+		while (nextroom != 0){
+
 			// The Haunted House Hallway Selection
-			if ( nextroom == 1 )
-			{
+			if (nextroom == 1){
 				System.out.println("\nYou are in a haunted house! Would you like to go 'upstairs' or into the 'kitchen'?");
 				System.out.println("To end the adventure now, say 'end'");
 				choice = keyboard.nextLine();
-
-				// User Chooses to go Upstairs
-				if ( choice.equals("upstairs") )
-					nextroom = 2;
-				// User Chooses to check out the Kitchen
-				else if ( choice.equals("kitchen") )
-					nextroom = 3;
-				// User leaves game by choice
-				else if (choice.equals("end"))
-				{
-					System.out.println("You chose to end the adventure and leave. Lame.");
-					break;
-				}
-				else
-				{
-					System.out.println( "ERROR." );
-				}
+				userChoice(choice);
 			}
 
 			// User Decisions Upstairs
-			if ( nextroom == 2 )
-			{
+			if (nextroom == 2 ){
 				System.out.println( "You're upstairs." );
 				System.out.println( "You see a hallway. At the end of the hallway is the master 'bedroom'. There is also a 'bathroom' off the hallways. Where would you like to go?");
 				System.out.println( "If you're too scared, go 'back'");
 				choice = keyboard.nextLine();
-				
-				// Return to Haunted House Hallway
-				if ( choice.equals("back") )
-					nextroom = 1;
-
-				// User Decisions in Bedroom (Which is located upstairs)
-				else if (choice.equals("bedroom"))
-					nextroom = 6;
-
-				// User ventures into the Upstairs bathroom
-				else if (choice.equals("bathroom"))
-					nextroom = 7;
-				else
-					System.out.println( "ERROR." );
+				userChoice(choice);
 			}
 			
 			// User has entered the Kitchen
@@ -66,14 +34,7 @@ public class Adventure2
 				System.out.println("there is, as you'd expect, a refridgerator. You may open the 'fridge' or look in a 'cabinet'");
 				System.out.println("If you're too scared, go 'back'");
 				choice = keyboard.nextLine();
-				if (choice.equals("fridge"))
-					nextroom = 4;
-				else if (choice.equals("cabinet"))
-					nextroom = 5;
-				else if (choice.equals("back"))
-					nextroom = 1;
-				else
-					System. out.println("ERROR.");
+				userChoice(choice);
 			}
 			
 			// User at the Fridge (kitchen)
@@ -170,7 +131,50 @@ public class Adventure2
 
 		System.out.println( "\nEND." );
 	}
+
+	public static void userChoice(String choice){
+		// User Chooses to go Upstairs
+		if (choice.equals("upstairs")){
+			nextroom = 2;
+		}
+		
+		// User Chooses to check out the Kitchen
+		else if (choice.equals("kitchen")){
+			nextroom = 3;
+		}
+		
+		// User leaves game by choice
+		else if (choice.equals("end")){
+			System.out.println("You chose to end the adventure and leave. Lame.");
+			nextroom = 0;
+		}
+
+		// Return to Haunted House Hallway
+		else if ( choice.equals("back") ){
+			nextroom = 1;
+		}
+
+		// User Decisions in Bedroom (Which is located upstairs)
+		else if (choice.equals("bedroom")){
+			nextroom = 6;
+		}
+
+		// User ventures into the Upstairs bathroom
+		else if (choice.equals("bathroom")){
+			nextroom = 7;
+		}
+
+		else if (choice.equals("fridge")){
+			nextroom = 4;
+		}
+		
+		else if (choice.equals("cabinet")){
+			nextroom = 5;
+		}
+		
+		else{
+			System.out.println( "ERROR." );
+		}
+	}
 	
 }
-
-

@@ -9,44 +9,41 @@ public class TicTacToe
 	{
 		System.out.println("TIC TAC TOE GAME");
 		System.out.println("----------------");
-		Scanner keyboard = new Scanner(System.in);
 		initBoard();
 		displayBoard();
-		int user =1;
+		int user =1, count =0;
 
 		while (user!=0){
-			for(int count = 0; count<5; count++){
-
-				if (count!=5){
-					if (user ==1){
-						System.out.print("'O', choose your location (row, col): ");
-						int selRow = keyboard.nextInt();
-						int selCol = keyboard.nextInt();
-						updateBoard(selRow, selCol, 1);
-						user = 2;
-					}
-					if (user ==2){
-						System.out.print("'X', choose your location (row, col): ");
-						int selRow = keyboard.nextInt();
-						int selCol = keyboard.nextInt();
-						updateBoard(selRow,selCol,2);
-						user = 1;
-					}
-				}
-				else{
+			while (count<8){
+				if (user ==1){
 					System.out.print("'O', choose your location (row, col): ");
-					int selRow = keyboard.nextInt();
-					int selCol = keyboard.nextInt();
-					updateBoard(selRow, selCol, 1);
-					System.out.println("END GAME.");
+					makeSelection(1);
+					count++;
+					user = 2;
 				}
-				
+				if (user ==2){
+					System.out.print("'X', choose your location (row, col): ");
+					makeSelection(2);
+					count++;
+					user = 1;
+				}
 			}
+					
+			System.out.print("'O', choose your location (row, col): ");
+			makeSelection(1);
+			System.out.println("END GAME.");
 			user = 0;
 		}
-
-
 	}
+
+	//Asks for user input to update board
+	public static void makeSelection(int user){
+		Scanner keyboard = new Scanner(System.in);
+		int selRow = keyboard.nextInt();
+		int selCol = keyboard.nextInt();
+		updateBoard(selRow, selCol, user);
+		return;
+	} 
 
 	//Initialize Board
 	public static void initBoard(){
@@ -93,5 +90,12 @@ public class TicTacToe
 }
 
 //Next steps:
-//need to check for winners, 3 in row/col/diagonally
-//need to check for tied game
+//to check for winners, 3 in row/col/diagonally
+//to check for tied game
+//to prevent user from over-writing previous choices
+
+
+
+
+
+

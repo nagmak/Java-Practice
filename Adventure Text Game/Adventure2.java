@@ -20,9 +20,10 @@ public class Adventure2{
 
 			// User Decisions Upstairs
 			if (nextroom == 2 ){
-				System.out.println( "You're upstairs." );
-				System.out.println( "You see a hallway. At the end of the hallway is the master 'bedroom'. There is also a 'bathroom' off the hallways. Where would you like to go?");
-				System.out.println( "If you're too scared, go 'back'");
+				System.out.println("You're upstairs." );
+				System.out.println("You see a hallway. At the end of the hallway is the master 'bedroom'."); 
+				System.out.println("You also notice a 'bathroom' off the hallways. Where would you like to go?");
+				System.out.println("If you're too scared, go 'back'");
 				choice = keyboard.nextLine();
 				userChoice(choice);
 			}
@@ -30,8 +31,9 @@ public class Adventure2{
 			// User has entered the Kitchen
 			else if (nextroom == 3)
 			{
-				System.out.println("There is a long countertop with dirty dishes everywhere. Off to the side");
-				System.out.println("there is, as you'd expect, a refridgerator. You may open the 'fridge' or look in a 'cabinet'");
+				System.out.println("There is a long countertop with dirty dishes everywhere.");
+				System.out.println("Off to the side, there is, as you'd expect, a refrigerator.");
+				System.out.println("You may open the 'fridge' or look in a 'cabinet'");
 				System.out.println("If you're too scared, go 'back'");
 				choice = keyboard.nextLine();
 				userChoice(choice);
@@ -40,7 +42,8 @@ public class Adventure2{
 			// User at the Fridge (kitchen)
 			else if (nextroom == 4)
 			{
-				System.out.println("Inside the refridgerator you see mouldy food. Would you like a bite?");
+				System.out.println("Inside the refrigerator you see mouldy food.");
+				System.out.println("Would you like a bite? ['yes' or 'no']");
 				yesno = keyboard.next();
 				yesNo(yesno);
 
@@ -49,7 +52,8 @@ public class Adventure2{
 			// User at the Cabinet (upstairs)
 			else if (nextroom == 5)
 			{
-				System.out.println("A hidden ghoul emergences from the cabinet! Will you 'run' or 'stay'?");
+				System.out.println("A hidden ghoul emergences from the cabinet!");
+				System.out.println("Will you 'run' or 'stay'?");
 				yesno = keyboard.next();
 				yesNo(yesno);
 			}
@@ -57,8 +61,9 @@ public class Adventure2{
 			// User at bedroom (upstairs)
 			else if (nextroom == 6)
 			{
-				System.out.println("You are in a plush bedroom, with expensive-looking hardwood furniture. The bed is unmade.");
-				System.out.println("In the back of the room, the closet door is ajar. Would you like to open the door? ['yes' or 'no']");
+				System.out.println("You are in a plush bedroom, with expensive-looking hardwood furniture.");
+				System.out.println("The bed is unmade. In the back of the room, the closet door is ajar.");
+				System.out.println("Would you like to open the door? ['yes' or 'no']");
 				yesno = keyboard.next();
 				yesNo(yesno);
 			}
@@ -66,7 +71,9 @@ public class Adventure2{
 			// User at bathroom (upstairs)
 			else if (nextroom == 7)
 			{
-				System.out.println("You are in a dirty bathroom. The wallpaper is coming off. The sink is running a brown water. Suddenly you're thirsty. Do you drink it? ('yes' or 'no')");
+				System.out.println("You are in a dirty bathroom.");
+				System.out.println("The wallpaper is coming off. The sink is running a brown water.");
+				System.out.println("Suddenly you're thirsty. Do you drink it? ['yes' or 'no']");
 				yesno = keyboard.next();
 				yesNo(yesno);
 			}
@@ -88,7 +95,7 @@ public class Adventure2{
 		
 		// User leaves game by choice
 		else if (choice.equals("end")){
-			System.out.println("You chose to end the adventure and leave. Lame.");
+			System.out.println("You chose to end the adventure and leave. Sad, really.");
 			nextroom = 0;
 		}
 
@@ -153,7 +160,7 @@ public class Adventure2{
 
 			// User is afraid and returns to the Upstairs hallway
 			else if (nextroom == 6){
-				System.out.println("You hear the door begin to creek and choose to runaway. Guess you're safe now. Until next time...");
+				System.out.println("You hear the door begin to creek and choose to run away. Guess you're safe now. Until next time...");
 				nextroom = 2;
 			}
 
@@ -168,7 +175,7 @@ public class Adventure2{
 			nextroom = 0;
 		}
 		else if (yesno.equals("stay")){
-			System.out.println("The ghoul laughs maniacally. You are captured until his dark magic for eternity.");
+			System.out.println("The ghoul laughs maniacally. You are captured under his dark magic for eternity.");
 			nextroom = 0;
 		}
 

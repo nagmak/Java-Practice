@@ -121,50 +121,54 @@ public class Adventure2{
 	}
 
 	public static void yesNo(String yesno){
-		//Food poisoning
-		if (yesno.equals("yes") && nextroom == 4){
-			System.out.println("You get a stomachache, the food is poisoned! BYE BYE.");
-			nextroom = 0;
-		}
 
-		//Starvation
-		else if (yesno.equals("no") && nextroom == 4){
-			System.out.println("Well, you didn't get poisoned but you die of starvation... eventually.");
-			nextroom = 0;
+		if (yesno.equals("yes")){
+
+			//Food poisoning
+			if (nextroom == 4){
+				System.out.println("You get a stomachache, the food is poisoned! BYE BYE.");
+				nextroom = 0;
+			}
+
+			// User decides to venture into the closet
+			else if (nextroom == 6){
+				System.out.println("A quick zombie emerges and bites your arm off! YOU'RE INFECTED! Looks like you're next.");
+				nextroom = 0;
+
+			}
+
+			// User chooses to drink dirty water (dies)
+			else if (nextroom == 7){
+				System.out.println("You can't stop drinking. You burst.");
+				nextroom = 0;
+			}
 		}
-		
-		else if (yesno.equals("run") && nextroom == 5){
+		else if (yesno.equals("no")){
+
+			//Starvation
+			if (nextroom == 4){
+				System.out.println("Well, you didn't get poisoned but you die of starvation... eventually.");
+				nextroom = 0;
+			}
+
+			// User is afraid and returns to the Upstairs hallway
+			else if (nextroom == 6){
+				System.out.println("You hear the door begin to creek and choose to runaway. Guess you're safe now. Until next time...");
+				nextroom = 2;
+			}
+
+			// User still dies bc this is a cursed house
+			else if (nextroom == 7){
+				System.out.println("You die of thirst.");
+				nextroom = 0;
+			}
+		}
+		else if (yesno.equals("run")){
 			System.out.println("You've escaped from the haunted house! Until next time...");
 			nextroom = 0;
 		}
-		
-		else if (yesno.equals("stay") && nextroom == 5){
+		else if (yesno.equals("stay")){
 			System.out.println("The ghoul laughs maniacally. You are captured until his dark magic for eternity.");
-			nextroom = 0;
-		}
-		
-
-		// User decides to venture into the closet
-		else if (yesno.equals("yes") && nextroom == 6){
-			System.out.println("A quick zombie emerges and bites your arm off! YOU'RE INFECTED! Looks like you're next.");
-			nextroom = 0;
-		}
-		
-		// User is afraid and returns to the Upstairs hallway
-		else if (yesno.equals("no") && nextroom == 6){
-			System.out.println("You hear the door begin to creek and choose to runaway. Guess you're safe now. Until next time...");
-			nextroom = 2;
-		}
-
-		// User chooses to drink dirty water (dies)
-		else if (yesno.equals("yes") && nextroom == 7){
-			System.out.println("You can't stop drinking. You burst.");
-			nextroom = 0;
-		}
-		
-		// User still dies bc this is cursed or something lol
-		else if (yesno.equals("no") && nextroom == 7){
-			System.out.println("You die of thirst.");
 			nextroom = 0;
 		}
 

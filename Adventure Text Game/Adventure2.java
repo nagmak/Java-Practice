@@ -10,7 +10,7 @@ public class Adventure2{
 
 			// The Haunted House Hallway Selection
 			if (nextroom == 1){
-				System.out.println("\nYou are in a haunted house! Would you like to go 'upstairs' or into the 'kitchen'?");
+				System.out.println("\nYou kick open the front door and enter the hallway. Would you like to go 'upstairs' or into the 'kitchen'?");
 				System.out.println("To end the adventure now, say 'end'");
 				userChoice(choice);
 			}

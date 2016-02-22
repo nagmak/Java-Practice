@@ -24,16 +24,19 @@ public class BabyBlackJack
 		
 		System.out.println("Dealer's total is " + totald + ".");
 		
-		if (totalp > totald)
-		{
+		whoWon(totalp, totald);
+	}
+
+	public static void whoWon(int totalp, int totald){
+		if (totalp > totald){
 			System.out.println("YOU WIN!");
 		}
-		else if (totald < totalp)
-		{
+
+		else if (totald < totalp){
 			System.out.println("YOU LOSE!");
 		}
-		else 
-		{
+
+		else{
 			System.out.println("It's a draw. Womp.");
 		}
 	}

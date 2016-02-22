@@ -32,11 +32,11 @@ public class BabyBlackJack
 			System.out.println("YOU WIN!");
 		}
 
-		else if (totald < totalp){
+		else if (totalp < totald){
 			System.out.println("YOU LOSE!");
 		}
 
-		else{
+		else if (totalp == totald){
 			System.out.println("It's a draw. Womp.");
 		}
 	}

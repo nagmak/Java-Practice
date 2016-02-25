@@ -15,6 +15,25 @@ public class TicTacToe
 
 		while (user!=0){
 			while (count<8){
+
+				if (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X'){
+					user = 0;
+					System.out.print("User X wins!");
+					break;
+				}
+
+				if (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X'){
+					user = 0;
+					System.out.print("User X wins!");
+					break;
+				}
+
+				if (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X'){
+					user = 0;
+					System.out.print("User X wins!");
+					break;
+				}
+
 				if (user ==1){
 					System.out.print("'O', choose your location (row, col): ");
 					makeSelection(1);

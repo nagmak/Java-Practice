@@ -21,16 +21,53 @@ public class TicTacToe
 					System.out.print("User X wins!");
 					break;
 				}
+				else if (board[0][0] == 'O' && board[0][1] == 'O' && board[0][2] == 'O'){
+					user = 0;
+					System.out.print("User O wins!");
+					break;
+				}
 
 				if (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X'){
 					user = 0;
 					System.out.print("User X wins!");
 					break;
 				}
+				else if (board[1][0] == 'O' && board[1][1] == 'O' && board[1][2] == 'O'){
+					user = 0;
+					System.out.print("User O wins!");
+					break;
+				}
 
 				if (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X'){
 					user = 0;
 					System.out.print("User X wins!");
+					break;
+				}
+				else if (board[2][0] == 'O' && board[2][1] == 'O' && board[2][2] == 'O'){
+					user = 0;
+					System.out.print("User O wins!");
+					break;
+				}
+
+				if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X'){
+					user = 0;
+					System.out.print("User X wins!");
+					break;
+				}
+				else if (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O'){
+					user = 0;
+					System.out.print("User O wins!");
+					break;
+				}
+
+				if (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X'){
+					user = 0;
+					System.out.print("User X wins!");
+					break;
+				}
+				else if (board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O'){
+					user = 0;
+					System.out.print("User O wins!");
 					break;
 				}
 

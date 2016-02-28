@@ -8,6 +8,8 @@ public class Taskr{
 		//Randomly picks between 1 to the N
 		//that is the task you do
 		Scanner keyboard = new Scanner(System.in);
+		keyboard.useDelimiter("\\n");
+
 		Random r = new Random();
 
 		System.out.println("Welcome to Taskr, end your indecision.");
@@ -15,18 +17,18 @@ public class Taskr{
 		
 		System.out.print("How many tasks? ");
 		int numTask = keyboard.nextInt();
-		String[] nameTask = new String[numTask+1];
+		String[] nameTask = new String[numTask];
 
 		int i = 0;
-		while(i<numTask+1){
+		while(i<numTask){
 			System.out.print("\nOkay cool. Please enter a task: ");
-			nameTask[i] = keyboard.nextLine();
+			nameTask[i] = keyboard.next();
 			i++;	
 		}
 
 		System.out.println("\nGenerating task...\n");
 
-		int select = r.nextInt(numTask+1);
+		int select = r.nextInt(numTask);
 		System.out.println(nameTask[select]);
 
 

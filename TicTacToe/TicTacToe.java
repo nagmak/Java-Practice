@@ -16,75 +16,33 @@ public class TicTacToe
 		while (user!=0){
 			while (count<8){
 
-				if (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X'){
-					user = 0;
-					System.out.print("User X wins!");
-					break;
-				}
-				else if (board[0][0] == 'O' && board[0][1] == 'O' && board[0][2] == 'O'){
-					user = 0;
-					System.out.print("User O wins!");
-					break;
-				}
-
-				if (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X'){
-					user = 0;
-					System.out.print("User X wins!");
-					break;
-				}
-				else if (board[1][0] == 'O' && board[1][1] == 'O' && board[1][2] == 'O'){
-					user = 0;
-					System.out.print("User O wins!");
-					break;
-				}
-
-				if (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X'){
-					user = 0;
-					System.out.print("User X wins!");
-					break;
-				}
-				else if (board[2][0] == 'O' && board[2][1] == 'O' && board[2][2] == 'O'){
-					user = 0;
-					System.out.print("User O wins!");
-					break;
-				}
-
-				if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X'){
-					user = 0;
-					System.out.print("User X wins!");
-					break;
-				}
-				else if (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O'){
-					user = 0;
-					System.out.print("User O wins!");
-					break;
-				}
-
-				if (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X'){
-					user = 0;
-					System.out.print("User X wins!");
-					break;
-				}
-				else if (board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O'){
-					user = 0;
-					System.out.print("User O wins!");
-					break;
-				}
-
 				if (user ==1){
 					System.out.print("'O', choose your location (row, col): ");
 					makeSelection(1);
 					count++;
-					user = 2;
+					if (checkWinner(1) == true){
+						user = 0;
+						break;
+					}
+					else{
+						user = 2;
+					}
+					
 				}
 				if (user ==2){
 					System.out.print("'X', choose your location (row, col): ");
 					makeSelection(2);
 					count++;
-					user = 1;
+					if (checkWinner(2) == true){
+						user = 0;
+						break;
+					}
+					else{
+						user = 1;
+					}
 				}
 			}
-					
+				
 			System.out.print("'O', choose your location (row, col): ");
 			makeSelection(1);
 			System.out.println("END GAME.");
@@ -100,6 +58,45 @@ public class TicTacToe
 		updateBoard(selRow, selCol, user);
 		return;
 	} 
+
+	public static boolean checkWinner(int user){
+		char tic = '\0'; //initialize
+		boolean win = false;
+		if (user == 1){
+			tic = 'O';
+		}
+
+		if (user == 2){
+			tic = 'X';
+		}
+		
+
+		if (board[0][0] == tic && board[0][1] == tic && board[0][2] == tic){
+			System.out.print("User " + tic + " wins!");
+			win = true;
+		}
+
+		else if (board[1][0] == tic && board[1][1] == tic && board[1][2] == tic){
+			System.out.print("User " + tic + " wins!");
+			win = true;
+		}
+
+		else if (board[2][0] == tic && board[2][1] == tic && board[2][2] == tic){
+			System.out.print("User " + tic + " wins!");
+			win = true;
+		}
+
+		else if (board[0][0] == tic && board[1][1] == tic && board[2][2] == tic){
+			System.out.print("User " + tic + " wins!");
+			win = true;
+		}
+
+		else if (board[0][2] == tic && board[1][1] == tic && board[2][0] == tic){
+			System.out.print("User " + tic + " wins!");
+			win = true;
+		}
+		return win;
+	}
 
 	//Initialize Board
 	public static void initBoard(){

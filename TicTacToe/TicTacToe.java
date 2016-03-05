@@ -123,14 +123,17 @@ public class TicTacToe
 			for (int c=0; c<3; c++){
 				System.out.print( board[r][c] + "" );
 				if (r ==selRow && c ==selCol){
-					if (user ==1){
-						// board[r][c] ;
-						System.out.print(board[r][c]= 'O');
+					if (board[r][c] == ' '){
+						if (user ==1){
+							// board[r][c] ;
+							System.out.print(board[r][c]= 'O');
+						}
+						if (user ==2){
+							// board[r][c] ;
+							System.out.print(board[r][c]= 'X');
+						}
 					}
-					if (user ==2){
-						// board[r][c] ;
-						System.out.print(board[r][c]= 'X');
-					}
+					
 				}
 			}
 			System.out.println();

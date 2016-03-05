@@ -133,7 +133,10 @@ public class TicTacToe
 							System.out.print(board[r][c]= 'X');
 						}
 					}
-					
+					else{
+						System.out.print("\nError. That spot has a char. Enter a new row, col: ");
+						makeSelection(user);
+					}
 				}
 			}
 			System.out.println();

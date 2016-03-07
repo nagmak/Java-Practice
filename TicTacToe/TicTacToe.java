@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TicTacToe
 {
-
+	// Initializes board
 	private static char[][] board = new char[3][3];
 
 	public static void main( String[] args )
@@ -65,6 +65,7 @@ public class TicTacToe
 		return;
 	} 
 
+	// Checks for a winner (does not include a tie)
 	public static boolean checkWinner(int user){
 		char tic = '\0'; //initialize
 		boolean win = false;
@@ -154,14 +155,3 @@ public class TicTacToe
 	}
 	
 }
-
-//Next steps:
-//to check for winners, 3 in row/col/diagonally
-//to check for tied game
-//to prevent user from over-writing previous choices
-
-
-
-
-
-

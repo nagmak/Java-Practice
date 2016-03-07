@@ -48,6 +48,12 @@ public class TicTacToe
 			System.out.println("END GAME.");
 			user = 0;
 		}
+
+		// Checks for a tie
+		if (count == 8 && checkWinner(user) == false){
+			System.out.println("It's a tie!");
+			user = 0;
+		}
 	}
 
 	//Asks for user input to update board
@@ -95,6 +101,7 @@ public class TicTacToe
 			System.out.print("User " + tic + " wins!");
 			win = true;
 		}
+
 		return win;
 	}
 
